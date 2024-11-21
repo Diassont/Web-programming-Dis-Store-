@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Computer components store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Computer components store</p>
+        <nav>
+            <a class="Home" href="index.html">Home</a> |
+            <a href="#" id="cart-button">Cart (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Contact</a> 
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="powersupplies.html">UA</a> |
+                <a href="powersupplies-en.html">EN</a>
+            </div>
+            <div class="account-links">
+                <a href="login.html">Login</a> |
+                <a href="register.html">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Suppliers section -->
+            <div class="footer-suppliers">
+                <h3>Our suppliers</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+    
+            <!-- Main information -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. All rights reserved.</p>
+                <p>Contact: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Total Price:</strong> <span id="cart-total">0</span> UAH</p>
+
+            <div>
+                <label for="discount-code"><strong>Enter Discount Code:</strong></label>
+                <input type="text" id="discount-code" placeholder="Discount Code">
+                <button id="apply-discount">Apply</button><br>
+                <button id="checkout-button">Checkout</button>
+            </div>
+            
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Product Catalog</h2>
+            <ul>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="computers.html">Computers</a></li>
+                <li><a href="keyboards.html">Keyboards</a></li>
+                <li><a href="mice.html">Mice</a></li>
+                <li><a href="headphones.html">Headphones</a></li>
+                <li><a href="microphones.html">Microphones</a></li>
+                <li><a href="monitors.html">Monitors</a></li>
+                <li><a href="motherboards.html">Motherboards</a></li>
+                <li><a href="processors.html">Processors</a></li>
+                <li><a href="videocards.html">Video Cards</a></li>
+                <li><a href="rams.html">RAM</a></li>
+                <li><a href="storagedevices.html">Storage Devices</a></li>
+                <li><a href="powersupplies.html">Power Supplies</a></li>
+                <li><a href="coolingsystems.html">Cooling Systems</a></li>
+                <li><a href="caseforPC.html">PC Cases</a></li>
+                <li><a href="multimediacables.html">Multimedia Cables</a></li>
+                <li><a href="printers.html">Printers</a></li>
+                <li><a href="acousticsystems.html">Acoustic Systems</a></li>
+                <li><a href="portablesystems.html">Portable Systems</a></li>
+            </ul>
+        </aside> 
+    
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/powersupplies/power1.png" alt="Product 1">
+                </div>
+                <h3>FSP 650W</h3>
+                <p>ATX 12V, 650W, 20+4 pin, CPU - 2x4+4pin, 8 pin, GPU - 2x6+2 pin, SATA - 8, Peripheral - 2, +12V1 - 54.16A, 1x120 mm, 140 x 150 x 86 mm</p>
+                <p class="price">₴2207</p>
+                <button onclick="addToCart('FSP 650W', 2207, 'img/powersupplies/power1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/powersupplies/power2.png" alt="Product 2">
+                </div>
+                <h3>Chieftec 750W Polaris</h3>
+                <p>ATX, 750W, 20+4 pin, CPU - 2x4+4pin, GPU - 4x6+2 pin, SATA - 8, Peripheral - 3, +12V1 - 62.5A, 1x120 mm, 150 x 140 x 87 mm</p>
+                <p class="price">₴4079</p>
+                <button onclick="addToCart('Chieftec 750W Polaris', 4079, 'img/powersupplies/power2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/powersupplies/power3.png" alt="Product 3">
+                </div>
+                <h3>Chieftec 750W Proton</h3>
+                <p>ATX 12V v2.3, 750W, 20+4 pin, CPU - 4+4pin, GPU - 4x6+2 pin, SATA - 6, Peripheral - 3, +12V1 - 62.5A, 1x140 mm, 160 x 150 x 87 mm</p>
+                <p class="price">₴3829</p>
+                <button onclick="addToCart('Chieftec 750W Proton', 3829, 'img/powersupplies/power3.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/powersupplies/power4.png" alt="Product 4">
+                </div>
+                <h3>Chieftec 750W</h3>
+                <p>ATX 12V v2.3, 750W, 20+4 pin, CPU - 4+4pin, GPU - 4x6+2 pin, SATA - 8, Peripheral - 3, +12V1 - 62A, 1x140 mm, 160 x 150 x 87 mm</p>
+                <p class="price">₴3289</p>
+                <button onclick="addToCart('Chieftec 750W', 3289, 'img/powersupplies/power4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/powersupplies/power5.png" alt="Product 5">
+                </div>
+                <h3>MSI 850W</h3>
+                <p>ATX, 850W, 20+4 pin, CPU - 2x4+4pin, SATA - 8, Peripheral - 4, +12V1 - 70.5A, 1x120 mm, 140 x 150 x 86 mm</p>
+                <p class="price">₴5499</p>
+                <button onclick="addToCart('MSI 850W', 5499, 'img/powersupplies/power5.png')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Магазин комп'ютерних комплектуючих</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Магазин комп'ютерних комплектуючих</p>
+        <nav>
+            <a class="Home" href="index.html">Головна</a> |
+            <a href="#" id="cart-button">Кошик (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Контакти</a> 
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="caseforPC.html">UA</a> |
+                <a href="caseforPC-en.html">EN</a>
+            <div class="account-links">
+                <a href="login.html">Увійти</a> |
+                <a href="register.html">Зареєструватися</a>
+            </div>
+            </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Секція постачальників -->
+            <div class="footer-suppliers">
+                <h3>Наші постачальники</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+    
+            <!-- Основна інформація -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. Всі права захищено.</p>
+                <p>Контакти: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальне вікно для кошика -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Ваш кошик</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Загальна вартість:</strong> <span id="cart-total">0</span> грн</p>
+
+            <div>
+                <label for="discount-code"><strong>Введіть код знижки:</strong></label>
+                <input type="text" id="discount-code" placeholder="Код знижки">
+                <button id="apply-discount">Застосувати</button><br>
+                <button id="checkout-button">Оплатити</button>
+            </div>
+            
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Каталог товарів</h2>
+            <ul>
+                <li><a href="laptops.html">Ноутбуки</a></li>
+                <li><a href="computers.html">Комп'ютери</a></li>
+                <li><a href="keyboards.html">Клавіатури</a></li>
+                <li><a href="mice.html">Мишки</a></li>
+                <li><a href="headphones.html">Навушники</a></li>
+                <li><a href="microphones.html">Мікрофони</a></li>
+                <li><a href="monitors.html">Монітори</a></li>
+                <li><a href="motherboards.html">Материнські плати</a></li>
+                <li><a href="processors.html">Процесори</a></li>
+                <li><a href="videocards.html">Відеокарти</a></li>
+                <li><a href="rams.html">Оперативна пам'ять</a></li>
+                <li><a href="storagedevices.html">Накопичувачі</a></li>
+                <li><a href="powersupplies.html">Блоки живлення</a></li>
+                <li><a href="coolingsystems.html">Системи охолодження</a></li>
+                <li><a href="caseforPC.html">Корпуси для ПК</a></li>
+                <li><a href="multimediacables.html">Кабелі мультимедійні</a></li>
+                <li><a href="printers.html">Принтери</a></li>
+                <li><a href="acousticsystems.html">Акустичні системи</a></li>
+                <li><a href="portablesystems.html">Портативні системи</a></li>
+            </ul>
+        </aside> 
+    
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case1.png" alt="Товар 1">
+                </div>
+                <h3>Gamemax Aero</h3>
+                <p>Геймерські, Miditower, ATX, Extended-ATX, Micro - ATX, Слотів розширення - 7, Вентилятори - 1 х 120 мм, 2 х 200 мм, 
+                    Додатково - Top 2x12/14 см, GPU - до 330 мм, CPU - 170 мм, PSU - н.д., кулери з підсвічуванням, на передній панелі, на задній панелі, 5.5 кг, чорний</p>
+                <p class="price">₴2489</p>
+                <button onclick="addToCart('Gamemax Aero', 2489, 'img/caseforPC/case1.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case2.png" alt="Товар 2">
+                </div>
+                <h3>MSI MAG FORGE M100R</h3>
+                <p>Геймерські, Minitower, Micro - ATX, Mini - ITX, Слотів розширення - 4, Вентилятори - 4 х 120 мм, 
+                    Додатково - Top 2x12 см, GPU - до 300 мм, CPU - 160 мм, кулери з підсвічуванням, на передній панелі, на задній панелі, 200 х 423 х 388 мм, 4.14, чорний</p>
+                <p class="price">₴2399</p>
+                <button onclick="addToCart('MSI MAG FORGE M100R', 2399, 'img/caseforPC/case2.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case3.png" alt="Товар 3">
+                </div>
+                <h3>Gamemax Infinity Mini White</h3>
+                <p>Геймерські, Minitower, ITX, Flex ATX, Слотів розширення - 4, 
+                    Додатково - Back 1x12 см, Top 2x12/14 см, Side 2x12 см, Bottom 3x12 см, GPU - до 330 мм, CPU - 155 мм, PSU - 190 мм, 275 х 358 х 373 мм, 3.6, білий</p>
+                <p class="price">₴1827</p>
+                <button onclick="addToCart('Gamemax Infinity Mini White', 1827, 'img/caseforPC/case3.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case4.png" alt="Товар 4">
+                </div>
+                <h3>Deepcool CC560 V2 Black</h3>
+                <p>Геймерські, Miditower, ATX, Micro - ATX, Mini - ITX, Слотів розширення - 7, Вентилятори - 4 х 120 мм, 
+                    Додатково - Top 2x12/14 см, GPU - до 370 мм, CPU - 165 мм, PSU - 170 мм, на передній панелі, на задній панелі, 483 x 432 x 215 мм, 7.2 кг, чорний</p>
+                <p class="price">₴2849</p>
+                <button onclick="addToCart('Deepcool CC560 V2 Black', 2849, 'img/caseforPC/case4.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case5.png" alt="Товар 5">
+                </div>
+                <h3>Deepcool MATREXX 55 V3</h3>
+                <p>Геймерські, Miditower, ATX, Extended-ATX, Micro - ATX, Mini - ITX, Слотів розширення - 7, 
+                    Додатково - Back 1x12 см, Top 2x12/14 см, Front 3x12/14 см, GPU - до 370 мм, CPU - 165 мм, PSU - 170 мм, 210 x 446 x 479 мм, 7.4, чорний</p>
+                <p class="price">₴2229</p>
+                <button onclick="addToCart('Deepcool MATREXX 55 V3', 2229, 'img/caseforPC/case5.png')">Додати до кошика</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

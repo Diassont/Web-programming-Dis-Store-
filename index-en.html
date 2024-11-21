@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Computer components store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Computer components store</p>
+        <nav>
+            <a class="Home" href="index.html">Home</a> |
+            <a href="#" id="cart-button">Cart (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Contacts</a>
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="index.html">UA</a> |
+                <a href="index-en.html">EN</a>
+            <div class="account-links">
+                <a href="login.html">Login</a> |
+                <a href="register.html">Register</a>
+            </div>
+            </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Suppliers Section -->
+            <div class="footer-suppliers">
+                <h3>Our suppliers</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Information -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. All rights reserved.</p>
+                <p>Contact: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Window for Cart -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Total:</strong> <span id="cart-total">0</span> UAH</p>
+
+            <div>
+                <label for="discount-code"><strong>Enter discount code:</strong></label>
+                <input type="text" id="discount-code" placeholder="Discount code">
+                <button id="apply-discount">Apply</button><br>
+                <button id="checkout-button">Checkout</button>
+            </div>
+
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Product Catalog</h2>
+            <ul>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="computers.html">Computers</a></li>
+                <li><a href="keyboards.html">Keyboards</a></li>
+                <li><a href="mice.html">Mice</a></li>
+                <li><a href="headphones.html">Headphones</a></li>
+                <li><a href="microphones.html">Microphones</a></li>
+                <li><a href="monitors.html">Monitors</a></li>
+                <li><a href="motherboards.html">Motherboards</a></li>
+                <li><a href="processors.html">Processors</a></li>
+                <li><a href="videocards.html">Video Cards</a></li>
+                <li><a href="rams.html">RAM</a></li>
+                <li><a href="storagedevices.html">Storage Devices</a></li>
+                <li><a href="powersupplies.html">Power Supplies</a></li>
+                <li><a href="coolingsystems.html">Cooling Systems</a></li>
+                <li><a href="caseforPC.html">PC Cases</a></li>
+                <li><a href="multimediacables.html">Multimedia Cables</a></li>
+                <li><a href="printers.html">Printers</a></li>
+                <li><a href="acousticsystems.html">Acoustic Systems</a></li>
+                <li><a href="portablesystems.html">Portable Systems</a></li>
+            </ul>
+        </aside>
+
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/laptops/laptop1.png" alt="Product 1">
+                </div>
+                <h3>Lenovo IdeaPad Gaming 3 15ACH6</h3>
+                <p>15.6", 1920x1080 (FullHD), IPS, AMD Ryzen 5 5600H (3.3 - 4.2 GHz), 16 GB, SSD - 512 GB,
+                    NVIDIA GeForce GTX 1650, GPU - 4 GB, 45 W, backlit keyboard, TPM module, 2.25 kg, black</p>
+                <p class="price">₴28888</p>
+                <button onclick="addToCart('Lenovo IdeaPad Gaming 3 15ACH6', 28888, 'img/laptops/laptop1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/computers/computer4.png" alt="Product 2">
+                </div>
+                <h3>Vinga Wolverine D7948</h3>
+                <p>Intel Core i5, 12400F, 6 cores, 12 threads, Frequency, GHz - 2.5, Boost Frequency, GHz - 4.4, Intel B760, GPU - integrated, GeForce RTX 4070, GPU - 12 GB, RAM - 16 GB, SSD - 1 TB</p>
+                <p class="price">₴56227</p>
+                <button onclick="addToCart('Vinga Wolverine D7948', 56227, 'img/computers/computer4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/keyboards/keyboard1.png" alt="Product 3">
+                </div>
+                <h3>Hator Rockfall 2 Mecha TKL Orange USB White</h3>
+                <p>Gaming, backlit, mechanical, wired, USB, compact, Backlight - RGB, English, Ukrainian,
+                    Switches - Hator Aurum Orange, Keys - 87, Cable - 1.8 m, 360 x 133 x 36 mm, 975g</p>
+                <p class="price">₴2199</p>
+                <button onclick="addToCart('Hator Rockfall 2 Mecha TKL Orange USB White', 2199, 'img/keyboards/keyboard1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/mice/mouse2.png" alt="Product 4">
+                </div>
+                <h3>Logitech G Pro X Superlight 2 Lightspeed Wireless White</h3>
+                <p>Gaming, wireless, USB adapter 2.4 GHz, optical, 32000 dpi, number of buttons - 5, battery, large, 125 x 63.5 x 40 mm, 60 g</p>
+                <p class="price">₴5999</p>
+                <button onclick="addToCart('Logitech G Pro X Superlight 2 Lightspeed Wireless White', 5999, 'img/mice/mouse2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/headphones/headphone5.png" alt="Product 5">
+                </div>
+                <h3>Logitech G Pro X 2 Lightspeed Wireless White</h3>
+                <p>Gaming, combined, Jack 3.5 mm, USB, Bluetooth, radio channel, closed, Driver - 50 mm, 38 Ohm, sensitivity - 88 dB, 20 - 20000 Hz, 7.1, with microphone,
+                    Microphone directionality - unidirectional, Earpad material - eco-leather, 50 hours, cable length - 1.8 m, number of jacks - 1, White, 345 g</p>
+                <p class="price">₴9999</p>
+                <button onclick="addToCart('Logitech G Pro X 2 Lightspeed Wireless White', 9999, 'img/headphones/headphone5.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/microphones/microphone4.png" alt="Product 6">
+                </div>
+                <h3>HyperX QuadCast S White</h3>
+                <p>Condenser, Purpose - for computers, for streaming, directional, 3.5 mm mini-jack, -36 dB ± 3 dB, 20 - 20000 Hz, 3.0 m, white</p>
+                <p class="price">₴7899</p>
+                <button onclick="addToCart('HyperX QuadCast S White', 7899, 'img/microphones/microphone4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/monitors/monitor1.png" alt="Product 7">
+                </div>
+                <h3>Acer QG241YM3BMIIPX</h3>
+                <p>23.8", IPS, 1920 x 1080, 180 Hz, 16:9, 250 cd/m2, 1000:1, 2 x HDMI, 1 x DisplayPort, 1 x 3.5mm Mini-Jack, tilt adjustment, VESA - 100x100 mm, 2 x 2 W, black</p>
+                <p class="price">₴4949</p>
+                <button onclick="addToCart('Acer QG241YM3BMIIPX', 4949, 'img/monitors/monitor1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/motherboards/motherboard1.png" alt="Product 8">
+                </div>
+                <h3>ASUS TUF GAMING B450-PLUS II</h3>
+                <p>Socket - AM4, chipset - AMD B450, DDR4, max. RAM capacity - 128 GB, max. RAM frequency - 4400 MHz,
+                    DisplayPort, HDMI, internal - 1 x M.2 22110, 1 x M.2 2280, 6 x Sata 6.0 Gb/s, ATX</p>
+                <p class="price">₴4229</p>
+                <button onclick="addToCart('ASUS TUF GAMING B450-PLUS II', 4229, 'img/motherboards/motherboard1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/processors/processor1.png" alt="Product 9">
+                </div>
+                <h3>AMD Ryzen 5 3600</h3>
+                <p>AM4, 6 cores, 12 threads, 3.6 GHz, 4.2 GHz, Max TDP - 65 W, 7nm, L1: 384KB, L2: 3MB, L3: 32MB, no cooler, Zen 2, BOX</p>
+                <p class="price">₴3630</p>
+                <button onclick="addToCart('AMD Ryzen 5 3600', 3630, 'img/processors/processor1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/videocards/videocard1.png" alt="Product 10">
+                </div>
+                <h3>ASUS GeForce GTX1660 SUPER 6144Mb TUF OC GAMING</h3>
+                <p>PCI-Express 3.0, 6 GB, GDDR6, 192 Bit, Boost - 1845 MHz, 1 x HDMI, 1 x DVI, 1 x DisplayPort, 8 pin, 125 W, 206 x 124 x 46 mm</p>
+                <p class="price">₴9000</p>
+                <button onclick="addToCart('ASUS GeForce GTX1660 SUPER 6144Mb TUF OC GAMING', 9000, 'img/videocards/videocard1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/rams/ram1.png" alt="Product 11">
+                </div>
+                <h3>DDR4 32GB 3600MHz PC4-24000 (Kit of 2x16GB) Crucial Ballistix White</h3>
+                <p>DDR4, 32 GB, Kit of 2, Memory frequency - 3600 MHz, Timings - CL15, Voltage - 1.35 V, No backlight</p>
+                <p class="price">₴4000</p>
+                <button onclick="addToCart('DDR4 32GB 3600MHz PC4-24000 (Kit of 2x16GB) Crucial Ballistix White', 4000, 'img/rams/ram1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/storagedevices/storage2.png" alt="Product 12">
+                </div>
+                <h3>SSD M.2 2280 1TB Micron</h3>
+                <p>1 TB, 3D NAND, M.2, PCI Express 3.0 x4, Read speed - 3500 Mb/s, Write speed - 3000 Mb/s, 80 x 22 mm, black</p>
+                <p class="price">₴2839</p>
+                <button onclick="addToCart('SSD M.2 2280 1TB Micron', 2839, 'img/storagedevices/storage2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/powersupplies/power1.png" alt="Product 13">
+                </div>
+                <h3>FSP 650W</h3>
+                <p>ATX 12V, 650 W, 20+4 pin, CPU - 2x4+4pin, 8 pin, GPU - 2x6+2 pin, SATA - 8, Peripheral - 2, +12V1 - 54.16A, 1x120 mm, 140 x 150 x 86 mm</p>
+                <p class="price">₴2207</p>
+                <button onclick="addToCart('FSP 650W', 2207, 'img/powersupplies/power1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/coolingsystems/cooling1.png" alt="Product 14">
+                </div>
+                <h3>ID-Cooling SE-226-XT ARGB Snow</h3>
+                <p>For processors - INTEL, AMD, socket - 1151, AM4, 2066, 1150, 1155, 1200, 1700, AM5, 2011, 1156, 1851, radiator material - aluminum, fan diameter - 120 mm, Maximum rotation speed - 1500 rpm,
+                    Bearing type - hydrodynamic (FDB Bearing), noise level - 30.5 dB, power connectors - 4-pin PWM, 3-pin, Backlight - ARGB, 6 heat pipes</p>
+                <p class="price">₴2049</p>
+                <button onclick="addToCart('ID-Cooling SE-226-XT ARGB Snow', 2049, 'img/coolingsystems/cooling1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case1.png" alt="Product 15">
+                </div>
+                <h3>Gamemax Aero</h3>
+                <p>Gaming, Miditower, ATX, Extended-ATX, Micro - ATX, Expansion slots - 7, Fans - 1 x 120 mm, 2 x 200 mm,
+                    Additional - Top 2x12/14 cm, GPU - up to 330 mm, CPU - 170 mm, PSU - n.d., fans with backlight, on the front panel, on the back panel, 5.5 kg, black</p>
+                <p class="price">₴2489</p>
+                <button onclick="addToCart('Gamemax Aero', 2489, 'img/caseforPC/case1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/multimediacables/cable2.png" alt="Product 16">
+                </div>
+                <h3>Display Port to Display Port 1.8m v1.4 4K120/8K60 Vinga</h3>
+                <p>Connector type 1 - DisplayPort, Connector type 2 - DisplayPort, length - 1.8 m, HDMI version - v. 1.4</p>
+                <p class="price">₴249</p>
+                <button onclick="addToCart('Display Port to Display Port 1.8m v1.4 4K120/8K60 Vinga', 249, 'img/multimediacables/cable2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/printers/printer4.png" alt="Product 17">
+                </div>
+                <h3>Epson M1120 with WiFi</h3>
+                <p>Inkjet, monochrome, 1-color, A4, 1440x720 dpi, Print speed color - 30 ppm, Print speed mono - 15 ppm, Input - 150 sheets, Output - 30 sheets, USB, Wi-Fi, Duplex - yes</p>
+                <p class="price">₴9325</p>
+                <button onclick="addToCart('Epson M1120 with WiFi', 9325, 'img/printers/printer4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/acousticsystems/acoustic1.png" alt="Product 18">
+                </div>
+                <h3>F&D R40BT Black</h3>
+                <p>Wired, wireless, 2.0, Bluetooth, digital optical, USB, Power, W - 60, wood (MDF), bluetooth speakers</p>
+                <p class="price">₴4499</p>
+                <button onclick="addToCart('F&D R40BT Black', 4499, 'img/acousticsystems/acoustic1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/portablesystems/portable1.png" alt="Product 19">
+                </div>
+                <h3>JBL Charge 4 Black</h3>
+                <p>Wireless, 1.0, Bluetooth, USB, USB-C, Power, W - 30, plastic, bluetooth speakers</p>
+                <p class="price">₴4500</p>
+                <button onclick="addToCart('JBL Charge 4 Black', 4500, 'img/portablesystems/portable1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/portablesystems/portable2.png" alt="Product 20">
+                </div>
+                <h3>JBL Charge 5 Black</h3>
+                <p>Wireless, 2.0, Bluetooth, USB, USB-C, Power, W - 40, plastic, bluetooth speakers</p>
+                <p class="price">₴6999</p>
+                <button onclick="addToCart('JBL Charge 5 Black', 6999, 'img/portablesystems/portable2.png')">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

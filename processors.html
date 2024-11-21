@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Магазин комп'ютерних комплектуючих</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Магазин комп'ютерних комплектуючих</p>
+        <nav>
+            <a class="Home" href="index.html">Головна</a> |
+            <a href="#" id="cart-button">Кошик (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Контакти</a> 
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="processors.html">UA</a> |
+                <a href="processors-en.html">EN</a>
+            <div class="account-links">
+                <a href="login.html">Увійти</a> |
+                <a href="register.html">Зареєструватися</a>
+            </div>
+            </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Секція постачальників -->
+            <div class="footer-suppliers">
+                <h3>Наші постачальники</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+    
+            <!-- Основна інформація -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. Всі права захищено.</p>
+                <p>Контакти: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальне вікно для кошика -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Ваш кошик</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Загальна вартість:</strong> <span id="cart-total">0</span> грн</p>
+
+            <div>
+                <label for="discount-code"><strong>Введіть код знижки:</strong></label>
+                <input type="text" id="discount-code" placeholder="Код знижки">
+                <button id="apply-discount">Застосувати</button><br>
+                <button id="checkout-button">Оплатити</button>
+            </div>
+            
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Каталог товарів</h2>
+            <ul>
+                <li><a href="laptops.html">Ноутбуки</a></li>
+                <li><a href="computers.html">Комп'ютери</a></li>
+                <li><a href="keyboards.html">Клавіатури</a></li>
+                <li><a href="mice.html">Мишки</a></li>
+                <li><a href="headphones.html">Навушники</a></li>
+                <li><a href="microphones.html">Мікрофони</a></li>
+                <li><a href="monitors.html">Монітори</a></li>
+                <li><a href="motherboards.html">Материнські плати</a></li>
+                <li><a href="processors.html">Процесори</a></li>
+                <li><a href="videocards.html">Відеокарти</a></li>
+                <li><a href="rams.html">Оперативна пам'ять</a></li>
+                <li><a href="storagedevices.html">Накопичувачі</a></li>
+                <li><a href="powersupplies.html">Блоки живлення</a></li>
+                <li><a href="coolingsystems.html">Системи охолодження</a></li>
+                <li><a href="caseforPC.html">Корпуси для ПК</a></li>
+                <li><a href="multimediacables.html">Кабелі мультимедійні</a></li>
+                <li><a href="printers.html">Принтери</a></li>
+                <li><a href="acousticsystems.html">Акустичні системи</a></li>
+                <li><a href="portablesystems.html">Портативні системи</a></li>
+            </ul>
+        </aside> 
+    
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/processors/processor1.png" alt="Товар 1">
+                </div>
+                <h3>AMD Ryzen 5 3600</h3>
+                <p>AM4, 6 ядер, 12 потоків, 3.6 GHz, 4.2 GHz, Максимальний TDP - 65 Вт, 7nm, L1: 384KB, L2: 3MB, L3: 32MB, немає, Zen 2, BOX</p>
+                <p class="price">₴3630</p>
+                <button onclick="addToCart('AMD Ryzen 5 3600', 3630, 'img/processors/processor1.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/processors/processor2.png" alt="Товар 2">
+                </div>
+                <h3>AMD Ryzen 5 5600X</h3>
+                <p>AM4, 6 ядер, 12 потоків, 3.7 GHz, 4.6 GHz, Максимальний TDP - 65 Вт, 7nm, L2: 3MB, L3: 32MB, немає, Zen 3, BOX</p>
+                <p class="price">₴6069</p>
+                <button onclick="addToCart('AMD Ryzen 5 5600X', 6069, 'img/processors/processor2.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/processors/processor3.png" alt="Товар 3">
+                </div>
+                <h3>AMD Ryzen 7 5800X</h3>
+                <p>AM4, 8 ядер, 16 потоків, 3.8 GHz, 4.7 GHz, Максимальний TDP - 105 Вт, 7nm, L2: 4MB, L3: 32MB, немає, Zen 3, BOX без кулера</p>
+                <p class="price">₴8125</p>
+                <button onclick="addToCart('AMD Ryzen 7 5800X', 8125, 'img/processors/processor3.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/processors/processor4.png" alt="Товар 4">
+                </div>
+                <h3>AMD Ryzen 5 8400F</h3>
+                <p>AM5, 6 ядер, 12 потоків, 4.2 GHz, 4.7 GHz, Максимальний TDP - 65 Вт, 4nm, L2: 6MB, L3: 16MB, немає, Zen 4, Tray</p>
+                <p class="price">₴5509</p>
+                <button onclick="addToCart('AMD Ryzen 5 8400F', 5509, 'img/processors/processor4.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/processors/processor5.png" alt="Товар 5">
+                </div>
+                <h3>AMD Ryzen 5 7600X</h3>
+                <p>AM5, 6 ядер, 12 потоків, 4.7 GHz, 5.3 GHz, Максимальний TDP - 105 Вт, 5nm, L1: 384KB, L2: 6MB, L3: 32MB, AMD Radeon Graphics, Zen 4, BOX без кулера</p>
+                <p class="price">₴10797</p>
+                <button onclick="addToCart('AMD Ryzen 5 7600X', 10797, 'img/processors/processor5.png')">Додати до кошика</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Computer components store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Computer components store</p>
+        <nav>
+            <a class="Home" href="index.html">Home</a> |
+            <a href="#" id="cart-button">Cart (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Contacts</a>
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="caseforPC.html">UA</a> |
+                <a href="caseforPC-en.html">EN</a>
+            <div class="account-links">
+                <a href="login.html">Login</a> |
+                <a href="register.html">Register</a>
+            </div>
+            </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Suppliers Section -->
+            <div class="footer-suppliers">
+                <h3>Our suppliers</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Information -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. All rights reserved.</p>
+                <p>Contact: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Window for Cart -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Total:</strong> <span id="cart-total">0</span> UAH</p>
+
+            <div>
+                <label for="discount-code"><strong>Enter discount code:</strong></label>
+                <input type="text" id="discount-code" placeholder="Discount code">
+                <button id="apply-discount">Apply</button><br>
+                <button id="checkout-button">Checkout</button>
+            </div>
+
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Product Catalog</h2>
+            <ul>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="computers.html">Computers</a></li>
+                <li><a href="keyboards.html">Keyboards</a></li>
+                <li><a href="mice.html">Mice</a></li>
+                <li><a href="headphones.html">Headphones</a></li>
+                <li><a href="microphones.html">Microphones</a></li>
+                <li><a href="monitors.html">Monitors</a></li>
+                <li><a href="motherboards.html">Motherboards</a></li>
+                <li><a href="processors.html">Processors</a></li>
+                <li><a href="videocards.html">Video Cards</a></li>
+                <li><a href="rams.html">RAM</a></li>
+                <li><a href="storagedevices.html">Storage Devices</a></li>
+                <li><a href="powersupplies.html">Power Supplies</a></li>
+                <li><a href="coolingsystems.html">Cooling Systems</a></li>
+                <li><a href="caseforPC.html">PC Cases</a></li>
+                <li><a href="multimediacables.html">Multimedia Cables</a></li>
+                <li><a href="printers.html">Printers</a></li>
+                <li><a href="acousticsystems.html">Acoustic Systems</a></li>
+                <li><a href="portablesystems.html">Portable Systems</a></li>
+            </ul>
+        </aside>
+
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case1.png" alt="Product 1">
+                </div>
+                <h3>Gamemax Aero</h3>
+                <p>Gaming, Miditower, ATX, Extended-ATX, Micro - ATX, Expansion slots - 7, Fans - 1 x 120 mm, 2 x 200 mm,
+                    Additional - Top 2x12/14 cm, GPU - up to 330 mm, CPU - 170 mm, PSU - n.d., fans with backlight, on the front panel, on the back panel, 5.5 kg, black</p>
+                <p class="price">₴2489</p>
+                <button onclick="addToCart('Gamemax Aero', 2489, 'img/caseforPC/case1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case2.png" alt="Product 2">
+                </div>
+                <h3>MSI MAG FORGE M100R</h3>
+                <p>Gaming, Minitower, Micro - ATX, Mini - ITX, Expansion slots - 4, Fans - 4 x 120 mm,
+                    Additional - Top 2x12 cm, GPU - up to 300 mm, CPU - 160 mm, fans with backlight, on the front panel, on the back panel, 200 x 423 x 388 mm, 4.14, black</p>
+                <p class="price">₴2399</p>
+                <button onclick="addToCart('MSI MAG FORGE M100R', 2399, 'img/caseforPC/case2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case3.png" alt="Product 3">
+                </div>
+                <h3>Gamemax Infinity Mini White</h3>
+                <p>Gaming, Minitower, ITX, Flex ATX, Expansion slots - 4,
+                    Additional - Back 1x12 cm, Top 2x12/14 cm, Side 2x12 cm, Bottom 3x12 cm, GPU - up to 330 mm, CPU - 155 mm, PSU - 190 mm, 275 x 358 x 373 mm, 3.6, white</p>
+                <p class="price">₴1827</p>
+                <button onclick="addToCart('Gamemax Infinity Mini White', 1827, 'img/caseforPC/case3.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case4.png" alt="Product 4">
+                </div>
+                <h3>Deepcool CC560 V2 Black</h3>
+                <p>Gaming, Miditower, ATX, Micro - ATX, Mini - ITX, Expansion slots - 7, Fans - 4 x 120 mm,
+                    Additional - Top 2x12/14 cm, GPU - up to 370 mm, CPU - 165 mm, PSU - 170 mm, on the front panel, on the back panel, 483 x 432 x 215 mm, 7.2 kg, black</p>
+                <p class="price">₴2849</p>
+                <button onclick="addToCart('Deepcool CC560 V2 Black', 2849, 'img/caseforPC/case4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/caseforPC/case5.png" alt="Product 5">
+                </div>
+                <h3>Deepcool MATREXX 55 V3</h3>
+                <p>Gaming, Miditower, ATX, Extended-ATX, Micro - ATX, Mini - ITX, Expansion slots - 7,
+                    Additional - Back 1x12 cm, Top 2x12/14 cm, Front 3x12/14 cm, GPU - up to 370 mm, CPU - 165 mm, PSU - 170 mm, 210 x 446 x 479 mm, 7.4, black</p>
+                <p class="price">₴2229</p>
+                <button onclick="addToCart('Deepcool MATREXX 55 V3', 2229, 'img/caseforPC/case5.png')">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Computer components store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Computer components store</p>
+        <nav>
+            <a class="Home" href="index.html">Home</a> |
+            <a href="#" id="cart-button">Cart (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Contacts</a>
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="computers.html">UA</a> |
+                <a href="computers-en.html">EN</a>
+            <div class="account-links">
+                <a href="login.html">Login</a> |
+                <a href="register.html">Register</a>
+            </div>
+            </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Suppliers Section -->
+            <div class="footer-suppliers">
+                <h3>Our suppliers</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Information -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. All rights reserved.</p>
+                <p>Contact: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Window for Cart -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Total:</strong> <span id="cart-total">0</span> UAH</p>
+
+            <div>
+                <label for="discount-code"><strong>Enter discount code:</strong></label>
+                <input type="text" id="discount-code" placeholder="Discount code">
+                <button id="apply-discount">Apply</button><br>
+                <button id="checkout-button">Checkout</button>
+            </div>
+
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Product Catalog</h2>
+            <ul>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="computers.html">Computers</a></li>
+                <li><a href="keyboards.html">Keyboards</a></li>
+                <li><a href="mice.html">Mice</a></li>
+                <li><a href="headphones.html">Headphones</a></li>
+                <li><a href="microphones.html">Microphones</a></li>
+                <li><a href="monitors.html">Monitors</a></li>
+                <li><a href="motherboards.html">Motherboards</a></li>
+                <li><a href="processors.html">Processors</a></li>
+                <li><a href="videocards.html">Video Cards</a></li>
+                <li><a href="rams.html">RAM</a></li>
+                <li><a href="storagedevices.html">Storage Devices</a></li>
+                <li><a href="powersupplies.html">Power Supplies</a></li>
+                <li><a href="coolingsystems.html">Cooling Systems</a></li>
+                <li><a href="caseforPC.html">PC Cases</a></li>
+                <li><a href="multimediacables.html">Multimedia Cables</a></li>
+                <li><a href="printers.html">Printers</a></li>
+                <li><a href="acousticsystems.html">Acoustic Systems</a></li>
+                <li><a href="portablesystems.html">Portable Systems</a></li>
+            </ul>
+        </aside>
+
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/computers/computer1.png" alt="Product 1">
+                </div>
+                <h3>Vinga Rhino D6755</h3>
+                <p>AMD Ryzen 5, 5500, 6 cores, 12 threads, Frequency, GHz - 3.6, Boost Frequency, GHz - 4.2, AMD B550, GeForce RTX 4060, GPU - 8 GB, RAM - 32 GB, SSD - 1 TB, Wi-Fi (IEEE 802.11 a/b/g/n/ac), Bluetooth 4.2</p>
+                <p class="price">₴33944</p>
+                <button onclick="addToCart('Vinga Rhino D6755', 33944, 'img/computers/computer1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/computers/computer2.png" alt="Product 2">
+                </div>
+                <h3>Vinga Thor D6219</h3>
+                <p>Ryzen 7, 7700X, 8 cores, 16 threads, Frequency, GHz - 4.5, Boost Frequency, GHz - 5.4, AMD B650, GPU - discrete, GeForce RTX 4070, GPU - 12 GB, RAM - 32 GB, SSD - 1 TB</p>
+                <p class="price">₴74943</p>
+                <button onclick="addToCart('Vinga Thor D6219', 74943, 'img/computers/computer2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/computers/computer3.png" alt="Product 3">
+                </div>
+                <h3>Vinga Wolverine D4977</h3>
+                <p>Intel Core i5, 10400F, 6 cores, 12 threads, Frequency, GHz - 2.9, Boost Frequency, GHz - 4.3, Intel H410, GPU - discrete, GeForce RTX 3060, GPU - 12 GB, RAM - 32 GB, SSD - 1 TB</p>
+                <p class="price">₴30670</p>
+                <button onclick="addToCart('Vinga Wolverine D4977', 30670, 'img/computers/computer3.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/computers/computer4.png" alt="Product 4">
+                </div>
+                <h3>Vinga Wolverine D7948</h3>
+                <p>Intel Core i5, 12400F, 6 cores, 12 threads, Frequency, GHz - 2.5, Boost Frequency, GHz - 4.4, Intel B760, GPU - integrated, GeForce RTX 4070, GPU - 12 GB, RAM - 16 GB, SSD - 1 TB</p>
+                <p class="price">₴56227</p>
+                <button onclick="addToCart('Vinga Wolverine D7948', 56227, 'img/computers/computer4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/computers/computer5.png" alt="Product 5">
+                </div>
+                <h3>Vinga Mini PC V660</h3>
+                <p>Intel Core i5, 1235U, 10 cores, 12 threads, Frequency, GHz - 1.3, Boost Frequency, GHz - 4.4, SOC, GPU - integrated, Intel Iris Xe Graphics, RAM - no RAM, Wi-Fi (802.11ac), Bluetooth 5.1</p>
+                <p class="price">₴14999</p>
+                <button onclick="addToCart('Vinga Mini PC V660', 14999, 'img/computers/computer5.png')">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

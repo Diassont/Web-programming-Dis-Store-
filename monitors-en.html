@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Computer components store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Computer components store</p>
+        <nav>
+            <a class="Home" href="index.html">Home</a> |
+            <a href="#" id="cart-button">Cart (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Contacts</a> 
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="monitors.html">UA</a> |
+                <a href="monitors-en.html">EN</a>
+            </div>
+            <div class="account-links">
+                <a href="login.html">Login</a> |
+                <a href="register.html">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Suppliers Section -->
+            <div class="footer-suppliers">
+                <h3>Our suppliers</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+    
+            <!-- Main Information -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. All rights reserved.</p>
+                <p>Contact: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal Window -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Total Price:</strong> <span id="cart-total">0</span> UAH</p>
+
+            <div>
+                <label for="discount-code"><strong>Enter Discount Code:</strong></label>
+                <input type="text" id="discount-code" placeholder="Discount Code">
+                <button id="apply-discount">Apply</button><br>
+                <button id="checkout-button">Proceed to Checkout</button>
+            </div>
+            
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Product Catalog</h2>
+            <ul>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="computers.html">Computers</a></li>
+                <li><a href="keyboards.html">Keyboards</a></li>
+                <li><a href="mice.html">Mice</a></li>
+                <li><a href="headphones.html">Headphones</a></li>
+                <li><a href="microphones.html">Microphones</a></li>
+                <li><a href="monitors.html">Monitors</a></li>
+                <li><a href="motherboards.html">Motherboards</a></li>
+                <li><a href="processors.html">Processors</a></li>
+                <li><a href="videocards.html">Graphics Cards</a></li>
+                <li><a href="rams.html">RAM</a></li>
+                <li><a href="storagedevices.html">Storage Devices</a></li>
+                <li><a href="powersupplies.html">Power Supplies</a></li>
+                <li><a href="coolingsystems.html">Cooling Systems</a></li>
+                <li><a href="caseforPC.html">PC Cases</a></li>
+                <li><a href="multimediacables.html">Multimedia Cables</a></li>
+                <li><a href="printers.html">Printers</a></li>
+                <li><a href="acousticsystems.html">Audio Systems</a></li>
+                <li><a href="portablesystems.html">Portable Systems</a></li>
+            </ul>
+        </aside> 
+    
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/monitors/monitor1.png" alt="Product 1">
+                </div>
+                <h3>Acer QG241YM3BMIIPX</h3>
+                <p>23.8", IPS, 1920 x 1080, 180 Hz, 16:9, 250 cd/m2, 1000:1, 2 x HDMI, 1 x DisplayPort, 1 x 3.5mm Mini-Jack, tilt adjustment, VESA - 100x100 mm, 2 x 2W, black</p>
+                <p class="price">₴4949</p>
+                <button onclick="addToCart('Acer QG241YM3BMIIPX', 4949, 'img/monitors/monitor1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/monitors/monitor2.png" alt="Product 2">
+                </div>
+                <h3>Acer V227QBI</h3>
+                <p>21.5", IPS, 1920 x 1080, 75 Hz, 16:9, 250 cd/m2, 1000:1, 25W, 1 x HDMI, 1 x VGA, tilt adjustment, VESA - 100x100 mm, no speakers, black</p>
+                <p class="price">₴4410</p>
+                <button onclick="addToCart('Acer V227QBI', 4410, 'img/monitors/monitor2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/monitors/monitor3.png" alt="Product 3">
+                </div>
+                <h3>Samsung LS32CG550EIXCI</h3>
+                <p>32", VA, 2560 x 1440, 165 Hz, 16:9, 300 cd/m2, 2500:1, 1 x HDMI, 1 x Headphone, 1 x DisplayPort, tilt adjustment, 710.1 x 533.6 x 272.6 mm, VESA - 75x75 mm, no speakers, 4.8 kg, black</p>
+                <p class="price">₴9188</p>
+                <button onclick="addToCart('Samsung LS32CG550EIXCI', 9188, 'img/monitors/monitor3.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/monitors/monitor4.png" alt="Product 4">
+                </div>
+                <h3>MSI G2412F</h3>
+                <p>24", IPS, 1920 x 1080, 180 Hz, 16:9, 300 cd/m2, 1000:1, 25W, 2 x HDMI, 1 x Headphone, 1 x DisplayPort, tilt adjustment, 541.9 × 424.3 × 231.9 mm, VESA - 75x75 mm, no speakers, 4.2 kg, black</p>
+                <p class="price">₴5799</p>
+                <button onclick="addToCart('MSI G2412F', 5799, 'img/monitors/monitor4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="img/monitors/monitor5.png" alt="Product 5">
+                </div>
+                <h3>ASUS TUF Gaming VG27AQML1A</h3>
+                <p>27", Fast IPS, 2560 x 1440, 260 Hz, 16:9, 400 cd/m2, 1000:1, 1 x HDMI, 1 x DisplayPort, tilt adjustment, 603.4 x 397.4 x 236.6 mm, VESA - 100x100 mm, no speakers, 5.3 kg, black</p>
+                <p class="price">₴15999</p>
+                <button onclick="addToCart('ASUS TUF Gaming VG27AQML1A', 15999, 'img/monitors/monitor5.png')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

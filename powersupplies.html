@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Магазин комп'ютерних комплектуючих</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Магазин комп'ютерних комплектуючих</p>
+        <nav>
+            <a class="Home" href="index.html">Головна</a> |
+            <a href="#" id="cart-button">Кошик (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Контакти</a> 
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="powersupplies.html">UA</a> |
+                <a href="powersupplies-en.html">EN</a>
+            <div class="account-links">
+                <a href="login.html">Увійти</a> |
+                <a href="register.html">Зареєструватися</a>
+            </div>
+            </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Секція постачальників -->
+            <div class="footer-suppliers">
+                <h3>Наші постачальники</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+    
+            <!-- Основна інформація -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. Всі права захищено.</p>
+                <p>Контакти: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальне вікно для кошика -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Ваш кошик</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Загальна вартість:</strong> <span id="cart-total">0</span> грн</p>
+
+            <div>
+                <label for="discount-code"><strong>Введіть код знижки:</strong></label>
+                <input type="text" id="discount-code" placeholder="Код знижки">
+                <button id="apply-discount">Застосувати</button><br>
+                <button id="checkout-button">Оплатити</button>
+            </div>
+            
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Каталог товарів</h2>
+            <ul>
+                <li><a href="laptops.html">Ноутбуки</a></li>
+                <li><a href="computers.html">Комп'ютери</a></li>
+                <li><a href="keyboards.html">Клавіатури</a></li>
+                <li><a href="mice.html">Мишки</a></li>
+                <li><a href="headphones.html">Навушники</a></li>
+                <li><a href="microphones.html">Мікрофони</a></li>
+                <li><a href="monitors.html">Монітори</a></li>
+                <li><a href="motherboards.html">Материнські плати</a></li>
+                <li><a href="processors.html">Процесори</a></li>
+                <li><a href="videocards.html">Відеокарти</a></li>
+                <li><a href="rams.html">Оперативна пам'ять</a></li>
+                <li><a href="storagedevices.html">Накопичувачі</a></li>
+                <li><a href="powersupplies.html">Блоки живлення</a></li>
+                <li><a href="coolingsystems.html">Системи охолодження</a></li>
+                <li><a href="caseforPC.html">Корпуси для ПК</a></li>
+                <li><a href="multimediacables.html">Кабелі мультимедійні</a></li>
+                <li><a href="printers.html">Принтери</a></li>
+                <li><a href="acousticsystems.html">Акустичні системи</a></li>
+                <li><a href="portablesystems.html">Портативні системи</a></li>
+            </ul>
+        </aside> 
+    
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/powersupplies/power1.png" alt="Товар 1">
+                </div>
+                <h3>FSP 650W</h3>
+                <p>ATX 12V, 650 Вт, 20+4 pin, CPU - 2x4+4pin, 8 pin, GPU - 2x6+2 pin, SATA - 8, Peripheral - 2, +12V1 - 54.16A, 1x120 мм, 140 x 150 x 86 мм</p>
+                <p class="price">₴2207</p>
+                <button onclick="addToCart('FSP 650W', 2207, 'img/powersupplies/power1.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/powersupplies/power2.png" alt="Товар 2">
+                </div>
+                <h3>Chieftec 750W Polaris</h3>
+                <p>ATX, 750 Вт, 20+4 pin, CPU - 2x4+4pin, GPU - 4x6+2 pin, SATA - 8, Peripheral - 3, +12V1 - 62.5A, 1x120 мм, 150 x 140 x 87 мм</p>
+                <p class="price">₴4079</p>
+                <button onclick="addToCart('Chieftec 750W Polaris', 4079, 'img/powersupplies/power2.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/powersupplies/power3.png" alt="Товар 3">
+                </div>
+                <h3>Chieftec 750W Proton</h3>
+                <p>ATX 12V v2.3, 750 Вт, 20+4 pin, CPU - 4+4pin, GPU - 4x6+2 pin, SATA - 6, Peripheral - 3, +12V1 - 62.5A, 1x140 мм, 160 x 150 x 87 мм</p>
+                <p class="price">₴3829</p>
+                <button onclick="addToCart('Chieftec 750W Proton', 3829, 'img/powersupplies/power3.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/powersupplies/power4.png" alt="Товар 4">
+                </div>
+                <h3>Chieftec 750W</h3>
+                <p>ATX 12V v2.3, 750 Вт, 20+4 pin, CPU - 4+4pin, GPU - 4x6+2 pin, SATA - 8, Peripheral - 3, +12V1 - 62A, 1x140 мм, 160 x 150 x 87 мм</p>
+                <p class="price">₴3289</p>
+                <button onclick="addToCart('Chieftec 750W', 3289, 'img/powersupplies/power4.png')">Додати до кошика</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/powersupplies/power5.png" alt="Товар 5">
+                </div>
+                <h3>MSI 850W</h3>
+                <p>ATX, 850 Вт, 20+4 pin, CPU - 2x4+4pin, SATA - 8, Peripheral - 4, +12V1 - 70.5А, 1x120 мм, 140 x 150 x 86 мм</p>
+                <p class="price">₴5499</p>
+                <button onclick="addToCart('MSI 850W', 5499, 'img/powersupplies/power5.png')">Додати до кошика</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

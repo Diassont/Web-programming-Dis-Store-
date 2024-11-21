@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dis-Store - Computer components store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1><a>Dis Store</a></h1>
+        <p>Computer components store</p>
+        <nav>
+            <a class="Home" href="index.html">Home</a> |
+            <a href="#" id="cart-button">Cart (<span id="cart-count">0</span>)</a> |
+            <a href="contacts.html">Contacts</a>
+        </nav>
+        <div class="top-right">
+            <div class="language-switch">
+                <a href="headphones.html">UA</a> |
+                <a href="headphones-en.html">EN</a>
+            <div class="account-links">
+                <a href="login.html">Login</a> |
+                <a href="register.html">Register</a>
+            </div>
+            </div>
+    </header>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Suppliers Section -->
+            <div class="footer-suppliers">
+                <h3>Our suppliers</h3>
+                <ul>
+                    <li><a href="http://surl.li/anqyez" target="_blank">Intel</a></li>
+                    <li><a href="http://surl.li/bceake" target="_blank">AMD</a></li>
+                    <li><a href="http://surl.li/rzwfio" target="_blank">NVIDIA</a></li>
+                    <li><a href="http://surl.li/jxqejv" target="_blank">ASUS</a></li>
+                    <li><a href="http://surl.li/ghxbbv" target="_blank">Gigabyte</a></li>
+                    <li><a href="http://surl.li/jwsocv" target="_blank">MSI</a></li>
+                    <li><a href="http://surl.li/kktzne" target="_blank">ASRock</a></li>
+                </ul>
+            </div>
+
+            <!-- Main Information -->
+            <div class="footer-info">
+                <p>&copy; 2024 Dis Store. All rights reserved.</p>
+                <p>Contact: DisStore@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Window for Cart -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-cart">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cart-items"></ul>
+            <p><strong>Total:</strong> <span id="cart-total">0</span> UAH</p>
+
+            <div>
+                <label for="discount-code"><strong>Enter discount code:</strong></label>
+                <input type="text" id="discount-code" placeholder="Discount code">
+                <button id="apply-discount">Apply</button><br>
+                <button id="checkout-button">Checkout</button>
+            </div>
+
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Product Catalog</h2>
+            <ul>
+                <li><a href="laptops.html">Laptops</a></li>
+                <li><a href="computers.html">Computers</a></li>
+                <li><a href="keyboards.html">Keyboards</a></li>
+                <li><a href="mice.html">Mice</a></li>
+                <li><a href="headphones.html">Headphones</a></li>
+                <li><a href="microphones.html">Microphones</a></li>
+                <li><a href="monitors.html">Monitors</a></li>
+                <li><a href="motherboards.html">Motherboards</a></li>
+                <li><a href="processors.html">Processors</a></li>
+                <li><a href="videocards.html">Video Cards</a></li>
+                <li><a href="rams.html">RAM</a></li>
+                <li><a href="storagedevices.html">Storage Devices</a></li>
+                <li><a href="powersupplies.html">Power Supplies</a></li>
+                <li><a href="coolingsystems.html">Cooling Systems</a></li>
+                <li><a href="caseforPC.html">PC Cases</a></li>
+                <li><a href="multimediacables.html">Multimedia Cables</a></li>
+                <li><a href="printers.html">Printers</a></li>
+                <li><a href="acousticsystems.html">Acoustic Systems</a></li>
+                <li><a href="portablesystems.html">Portable Systems</a></li>
+            </ul>
+        </aside>
+
+        <div class="products">
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/headphones/headphone1.png" alt="Product 1">
+                </div>
+                <h3>Hator Hypergang 2 Black</h3>
+                <p>Gaming (gaming), wired, Jack 3.5 mm, closed, Driver - 53 mm, 64 Ohm, sensitivity - 110 dB, 10 - 22000 Hz, dynamic type, 2.0,
+                    with microphone, Microphone directionality - omnidirectional, Earpad material - eco-leather, cable length - 2.5 m, number of jacks - 2, Black, 245 g</p>
+                <p class="price">₴2299</p>
+                <button onclick="addToCart('Hator Hypergang 2 Black', 2299, 'img/headphones/headphone1.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/headphones/headphone2.png" alt="Product 2">
+                </div>
+                <h3>Razer Blackshark V2 X Black</h3>
+                <p>Gaming (gaming), wired, Jack 3.5 mm, closed, 32 Ohm, sensitivity - 100 dB, 12 - 28000 Hz, dynamic type, 7.1, with microphone,
+                    Microphone directionality - unidirectional, Earpad material - leatherette, cable length - 1.3 m, Black, 240 g</p>
+                <p class="price">₴2999</p>
+                <button onclick="addToCart('Razer Blackshark V2 X Black', 2999, 'img/headphones/headphone2.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/headphones/headphone3.png" alt="Product 3">
+                </div>
+                <h3>Logitech G435 Lightspeed Wireless Gaming Headset Black</h3>
+                <p>Gaming (gaming), wireless, USB Type-C, Bluetooth, closed, 45 Ohm, sensitivity - 83 dB, 20 - 20000 Hz, with microphone,
+                    Microphone directionality - unidirectional, Earpad material - foam material, 18 hours, Black, 165 g</p>
+                <p class="price">₴4499</p>
+                <button onclick="addToCart('Logitech G435 Lightspeed Wireless Gaming Headset Black', 4499, 'img/headphones/headphone3.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/headphones/headphone4.png" alt="Product 4">
+                </div>
+                <h3>Logitech G PRO X Gaming Headset Black</h3>
+                <p>Gaming (gaming), wired, Jack 3.5 mm, USB, closed, Driver - 50 mm, 35 Ohm, sensitivity - 91 dB, 20 - 20000 Hz, with microphone,
+                    Microphone directionality - unidirectional, Earpad material - leatherette, cable length - 2 m, number of jacks - 1, 2, Black, 320 g</p>
+                <p class="price">₴6499</p>
+                <button onclick="addToCart('Logitech G PRO X Gaming Headset Black', 6499, 'img/headphones/headphone4.png')">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                <img src="img/headphones/headphone5.png" alt="Product 5">
+                </div>
+                <h3>Logitech G Pro X 2 Lightspeed Wireless White</h3>
+                <p>Gaming (gaming), combined, Jack 3.5 mm, USB, Bluetooth, radio channel, closed, Driver - 50 mm, 38 Ohm, sensitivity - 88 dB, 20 - 20000 Hz, 7.1, with microphone,
+                    Microphone directionality - unidirectional, Earpad material - eco-leather, 50 hours, cable length - 1.8 m, number of jacks - 1, White, 345 g</p>
+                <p class="price">₴9999</p>
+                <button onclick="addToCart('Logitech G Pro X 2 Lightspeed Wireless White', 9999, 'img/headphones/headphone5.png')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
